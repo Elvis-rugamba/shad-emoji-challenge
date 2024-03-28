@@ -11,9 +11,9 @@ import ChatSkeleton from "@/components/chat-skeleton"
 import SortDropdown from "@/components/sort-dropdown"
 
 export default function ChatsPage() {
-  const [sort, setSort] = useState<"asc" | "desc">()
+  const [sort, setSort] = useState<"asc" | "desc">("desc")
   const { data, error, isLoading } = useSWR<Chat[]>(
-    `/api/chats?sort=${sort || ""}`,
+    `/api/chats?sort=${sort}`,
     fetcher
   )
 
