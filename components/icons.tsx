@@ -1,4 +1,7 @@
 import {
+  CheckIcon,
+  ChevronRightIcon,
+  CircleDotIcon,
   Moon,
   Send,
   Smile,
@@ -15,4 +18,7 @@ export const Icons = {
   twitter: Twitter,
   logo: Smile,
   send: Send,
+  checkIcon: CheckIcon,
+  chevronRightIcon: ChevronRightIcon,
+  circleDotIcon: CircleDotIcon,
 }

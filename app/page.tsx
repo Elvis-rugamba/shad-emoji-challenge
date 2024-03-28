@@ -21,6 +21,7 @@ export default function IndexPage() {
 
   const handleSend = async (e: FormEvent) => {
     e.preventDefault()
+    setMessage("")
     setMessages([...messages, { role: MessageRole.USER, content: message }])
     setIsLoading(true)
     const result = await sendMessage(message)
@@ -51,6 +52,14 @@ export default function IndexPage() {
             <p className="whitespace-pre-wrap break-words">{message.content}</p>
           </div>
         ))}
+        {isLoading ? (
+          <div className="py-2">
+            <p className="font-semibold">Shadmoji</p>
+            <div className="flex w-8 animate-pulse">
+              <span className="mt-2 h-2 w-full rounded bg-slate-700"></span>
+            </div>
+          </div>
+        ) : null}
       </div>
       <div className="sticky bottom-0 z-10 size-full bg-background pb-8 pt-2">
         <form onSubmit={handleSend} className="flex w-full items-center gap-2">
@@ -59,6 +68,7 @@ export default function IndexPage() {
             size="lg"
             className="resize-none"
             placeholder="Message..."
+            value={message}
             onChange={handleChange}
           />
           <Button
