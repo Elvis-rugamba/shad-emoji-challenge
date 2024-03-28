@@ -10,5 +10,5 @@ export async function GET(request: Request) {
     orderBy: { createdAt: sort || "desc" },
   })
 
-  return Response.json(chats)
+  return new Response(JSON.stringify(chats))
 }
