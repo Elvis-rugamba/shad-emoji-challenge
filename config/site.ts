@@ -8,5 +8,9 @@ export const siteConfig = {
       title: "Home",
       href: "/",
     },
+    {
+      title: "History",
+      href: "/chats",
+    },
   ],
 }
